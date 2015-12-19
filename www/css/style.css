@@ -1,0 +1,14 @@
+/* Empty. Add your own CSS if you like */
+.pane {
+	background-image: url('../img/porsche.jpg');
+	background-size: 100% 100%;
+}
+
+#topbar {
+	background-color: rgba(255,255,255,0.66);
+}
+
+#title {
+	color: red;
+	font-size: 	30px;
+}
