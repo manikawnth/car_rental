@@ -9,6 +9,27 @@
 }
 
 #title {
-	color: red;
+	color: #9E1414;
 	font-size: 	30px;
+}
+
+#searchbox{
+	background-color: rgba(255,255,255,0.66);
+}
+
+#searchrow{
+	margin-top: 80%;
+	/*margin-bottom: 10%;*/
+}
+
+#searchbutton{
+	color:#9E1414;
+}
+#searchdiv{
+			margin-top: 100%;
+			text-align: center;
+}
+
+#phonebutton{
+	color: #9E1414;
 }
