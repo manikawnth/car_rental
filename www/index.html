@@ -14,30 +14,23 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <!-- location data js -->
+    <script src="js/location.js"></script>
     <!-- your app's js -->
     <script src="js/app.js"></script>
 </head>
 
 <body ng-app="carrentalApp">
-    <ion-pane ng-controller="HomeCtrl">
-        <ion-header-bar class="bar-stable" id="topbar">
-            <h1 class="title" id="title">AVIS</h1>
-            <button class="button button-small button-clear icon-right  ion-ios-telephone-outline" id="phonebutton"></button>
-        </ion-header-bar>
-        <ion-content scroll="false">
-            <div class="row row-bottom" id="searchrow">
-                <div class="col col-offset-20 col-60">
-                    <div id="searchdiv">
-                        <p>
-                            <h4>START A RESERVATION</h4></p>
-                        <label class="item item-input " id="searchbox">
-                            <input type="text" placeholder="Enter pick-up location" ng-focus="switch_to_locsearch()">
-                            <button class="button button-small button-clear button-dark icon-right ion-navigate " id="searchbutton"></button>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </ion-content>
+    <ion-pane>
+        <ion-nav-bar class="bar-stable" id="topbar">
+            <ion-nav-back-button class="button-clear">
+                <i class="ion-arrow-left-c"></i> Back
+            </ion-nav-back-button>
+            <!-- <h1 class="title" id="title">AVIS</h1>
+ -->
+            <!--            <button class="button button-small button-clear icon-right  ion-ios-telephone-outline" id="phonebutton"></button> -->
+        </ion-nav-bar>
+        <ion-nav-view animation="slide-left-right"></ion-nav-view>
     </ion-pane>
 </body>
 

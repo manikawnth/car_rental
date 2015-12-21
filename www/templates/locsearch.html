@@ -1,0 +1,19 @@
+<ion-view>
+    <ion-nav-title>
+        <h3>Search a location</h3> </ion-nav-title>
+    <ion-content scroll="true" ng-controller="locsearchCtrl">
+        <div class="row list">
+            <div class="col col-offset-5 col-95">
+                <label class="item item-input trans">
+                    <input type="text" placeholder="Enter pick-up location" ng-model="outloc" autofocus>
+                    <button class="button button-small button-clear button-dark icon-right ion-navigate " id="searchbutton"></button>
+                </label>
+            </div>
+        </div>
+        <div class="list card trans" ng-if="outloc.length >= 3">
+            <a href="#" class="item item-icon-left trans" ng-repeat="loc in locdata | filter:outloc" >
+                <i class="icon ion-home"></i> Enter home address
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

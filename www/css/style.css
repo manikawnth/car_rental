@@ -3,6 +3,9 @@
 	background-image: url('../img/porsche.jpg');
 	background-size: 100% 100%;
 }
+#hometitle {
+	color: red;
+}
 
 #topbar {
 	background-color: rgba(255,255,255,0.66);
@@ -13,12 +16,13 @@
 	font-size: 	30px;
 }
 
-#searchbox{
-	background-color: rgba(255,255,255,0.66);
+
+.trans{
+	background-color: rgba(255,255,255,0.66) !important;
 }
 
 #searchrow{
-	margin-top: 80%;
+	margin-top: 120%;
 	/*margin-bottom: 10%;*/
 }
 
@@ -32,4 +36,8 @@
 
 #phonebutton{
 	color: #9E1414;
+}
+
+.title{
+	text-align: center;
 }
