@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('carrentalApp', ['ionic','location'])
+angular.module('carrentalApp', ['ionic', 'location'])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('home', {
@@ -54,18 +54,39 @@ angular.module('carrentalApp', ['ionic','location'])
     }
 }])
 
-.controller('locsearchCtrl', ['$scope', '$http', 'resdata','locdata', function($scope, $http, resdata,locdata) {
+.controller('locsearchCtrl', ['$scope', '$http', '$filter', 'resdata', 'locdata', function($scope, $http, $filter, resdata, locdata) {
     console.log("Entered location search")
     console.log(resdata);
     resdata.outloc = $scope.outloc;
+    $scope.show = false;
 
-    $scope.locdata = locdata;
+    $scope.locs = [];
+    // for(i=0;i<locdata.length;i++){
+    //   var doc = {};
+    //   doc.id = i;
+    //   doc.name = locdata[i];
+    //   $scope.locs.push(doc);
+    // }
+    console.log($scope.locs);
 
-    // $scope.$watch('outloc', function(newval, oldval) {
-    //     if (newval != undefined && newval.length >= 3) {
-    //         console.log(locdata)
-    //     }
-    // })
+    $scope.$watch('outloc', function(newval, oldval) {
+        $scope.locs = [];
+        if (newval != undefined && newval.length >= 3) {
+            console.log(newval);
+            var re = new RegExp(newval, 'i');
+            // $scope.locs = $filter('filter')(locdata,$scope.outloc);
+            locdata.forEach(function(str) {
+            
+                var match_str = str.match(re)
+                if (match_str != null) {
+                    $scope.locs.push(str)
+                }
+
+            })
+            $scope.show = true;
+        } else {
+            $scope.show = false;
+
+        }
+    })
 }])
-
-
